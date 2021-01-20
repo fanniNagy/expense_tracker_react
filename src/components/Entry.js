@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import entryService from "../services/EntryService"
+import CategoryPieChart from "./CategoryPieChart";
 
 const Entry = () => {
 
@@ -31,6 +32,9 @@ const Entry = () => {
                         </li>
                     )}
                 </ul>
+                <div style={{height: "50em"}}>
+                    <CategoryPieChart/>
+                </div>
             </div>
         )
     }
