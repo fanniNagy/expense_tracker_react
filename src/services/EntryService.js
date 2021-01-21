@@ -26,23 +26,22 @@ const categoryToPieChartData = (categories) => {
 }
 const getNewRandomEntry = () => {
     const request = axios.get(baseUrl + "random")
-    return request.then(response => response.data)
+    return request.then(response => response)
 }
 
 const insertNewEntryToChartData = (r, categoryCounts, setCategoryCounts) => {
     let responseCategory = categoryCounts.filter(
         category => category.category === r.category);
-    if(responseCategory.length > 0) {
+    if (responseCategory.length > 0) {
         responseCategory[0] = {...responseCategory[0], price: r.price + responseCategory[0].price}
         let didntChange = categoryCounts.filter(
-            x => x.category!==responseCategory[0].category
+            x => x.category !== responseCategory[0].category
         );
         didntChange.push(responseCategory[0])
         setCategoryCounts(didntChange)
-    } else{
-        setCategoryCounts([...categoryCounts, {category: r.category, price:r.price}])
+    } else {
+        setCategoryCounts([...categoryCounts, {category: r.category, price: r.price}])
     }
-
 }
 
 export default {
@@ -50,5 +49,5 @@ export default {
     getCategoryCount,
     categoryToPieChartData,
     getNewRandomEntry,
-    insertNewEntryToChartData
+    insertNewEntryToChartData,
 }

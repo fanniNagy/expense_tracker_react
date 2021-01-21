@@ -4,6 +4,10 @@ import CategoryPieChart from "./CategoryPieChart";
 
 const Entry = () => {
     const [categoryCounts, setCategoryCounts] = useState([])
+    const [error, setError] = useState({
+        display: false,
+        message: ""
+    })
 
     useEffect(() => {
         entryService.getCategoryCount()
@@ -15,7 +19,12 @@ const Entry = () => {
     const makeItRain = () => {
         entryService.getNewRandomEntry()
             .then(r => {
-               entryService.insertNewEntryToChartData(r, categoryCounts, setCategoryCounts)
+                console.log(r)
+                if(r.status === 200) {
+                    entryService.insertNewEntryToChartData(r.data, categoryCounts, setCategoryCounts)
+                } else{
+                    setError({display: true, message: "Something went wrong :("})
+                }
             })
     }
 
@@ -24,7 +33,10 @@ const Entry = () => {
             <div> No entry found :(</div>
             <button onClick={makeItRain}>Make it rain!</button>
         </>)
-    } else {
+    } else if(error.display){
+        return <div>{error.message}</div>
+    }
+    else {
 
         return (
             <div>
