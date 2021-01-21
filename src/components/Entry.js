@@ -3,14 +3,12 @@ import entryService from "../services/EntryService"
 import CategoryPieChart from "./CategoryPieChart";
 
 const Entry = () => {
-
-    const [entries, setEntries] = useState([])
+    const [categoryCounts, setCategoryCounts] = useState([])
 
     useEffect(() => {
-        entryService.getAll()
-            .then(response => {
-                console.log(response)
-                setEntries(response)
+        entryService.getCategoryCount()
+            .then(categoryCountsResponse => {
+                setCategoryCounts(categoryCountsResponse)
             })
     }, [])
 
