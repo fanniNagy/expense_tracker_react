@@ -12,26 +12,25 @@ const Entry = () => {
             })
     }, [])
 
+    const makeItRain = () => {
+        entryService.getNewRandomEntry()
+            .then(r => {
+               entryService.insertNewEntryToChartData(r, categoryCounts, setCategoryCounts)
+            })
+    }
 
-    if (entries.length === 0) {
-        return <div> No entry found :( </div>
+    if (categoryCounts.length === 0) {
+        return (<>
+            <div> No entry found :(</div>
+            <button onClick={makeItRain}>Make it rain!</button>
+        </>)
     } else {
+
         return (
             <div>
-                <ul>
-                    {entries.map(entry =>
-                        <li key={entry.id}>
-                            <ul>
-                                <li>{entry.name}</li>
-                                <li>{entry.price}</li>
-                                <li>{entry.date}</li>
-                                <li>{entry.category}</li>
-                            </ul>
-                        </li>
-                    )}
-                </ul>
-                <div style={{height: "50em"}}>
-                    <CategoryPieChart/>
+                <button onClick={makeItRain}>Make it rain!</button>
+                <div style={{height: "40em"}}>
+                    <CategoryPieChart data={entryService.categoryToPieChartData(categoryCounts)}/>
                 </div>
             </div>
         )
