@@ -74,6 +74,11 @@ const INITIAL_ENTRY = {
     name:""
 }
 
+const getTopSpending = () => {
+    const request = axios.get(baseUrl + "category/top5spending")
+    return request.then(response => response)
+}
+
 
 export default {
     getAll,
@@ -84,5 +89,6 @@ export default {
     formatDate,
     CATEGORIES,
     addNewEntry,
-    INITIAL_ENTRY
+    INITIAL_ENTRY,
+    getTopSpending
 }
