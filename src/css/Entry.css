@@ -1,0 +1,31 @@
+#entry{
+    display: flex;
+    flex-direction: column;
+    border: 0;
+}
+#pie-chart{
+    height: 30em;
+}
+#react-calendar{
+    height: 10em;
+}
+#add-entry{
+    height: 10em;
+    text-align: center;
+}
+#add-entry form{
+    display: flex;
+    flex-direction: column;
+    /*display: inline-block;*/
+    margin-left: 25%;
+    margin-right:25%;
+    width: 50%;
+    height: 10em;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#make-it-rain{
+    height: 3vh;
+    width: 10vw;
+}
