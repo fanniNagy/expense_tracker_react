@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import entryService from "../services/EntryService"
 import CategoryPieChart from "./CategoryPieChart";
+import EntryCalendar from "./Calendar";
 
 const Entry = () => {
     const [categoryCounts, setCategoryCounts] = useState([])
@@ -43,6 +44,9 @@ const Entry = () => {
                 <button onClick={makeItRain}>Make it rain!</button>
                 <div style={{height: "40em"}}>
                     <CategoryPieChart data={entryService.categoryToPieChartData(categoryCounts)}/>
+                </div>
+                <div style={{height: "30em"}}>
+                    <EntryCalendar/>
                 </div>
             </div>
         )
