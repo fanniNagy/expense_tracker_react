@@ -21,20 +21,16 @@ const AddNewEntry = () => {
     };
 
     return <form onSubmit={(event) => handleSubmit(event)}>
-        <label>
-            Price: <input type="number" name="price" required={true} onChange={handleChange}/>
+        <label>Price: <input type="number" name="price" required={true} onChange={handleChange}/>
         </label>
-        <label>
-            Date: <input type="date" name="date" onChange={handleChange}/>
+        <label>Date: <input type="date" name="date" onChange={handleChange}/>
         </label>
-        <label>
-            Category:
+        <label>Category:
         <select id="categories" name="category" onChange={handleChange} defaultValue={"UNCATEGORIZED"}>
             {entryService.CATEGORIES.map(category => <option key={category} value={category}>{category}</option>)}
         </select>
         </label>
-        <label onChange={handleChange}>
-            Name: <input type="text" name="name"/>
+        <label>Name: <input type="text" name="name" onChange={handleChange}/>
         </label>
         <button type="submit" value="Submit">Submit</button>
     </form>
