@@ -27,9 +27,12 @@ const AddNewEntry = () => {
         <label>
             Date: <input type="date" name="date" onChange={handleChange}/>
         </label>
+        <label>
+            Category:
         <select id="categories" name="category" onChange={handleChange} defaultValue={"UNCATEGORIZED"}>
             {entryService.CATEGORIES.map(category => <option key={category} value={category}>{category}</option>)}
         </select>
+        </label>
         <label onChange={handleChange}>
             Name: <input type="text" name="name"/>
         </label>
