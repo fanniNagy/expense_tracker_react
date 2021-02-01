@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import entryService from "../services/EntryService"
+import "../css/Entry.css";
 
 const AddNewEntry = () => {
 
@@ -20,7 +21,7 @@ const AddNewEntry = () => {
         }));
     };
 
-    return <form onSubmit={(event) => handleSubmit(event)}>
+    return <form className="add-entry-form" onSubmit={(event) => handleSubmit(event)}>
         <label>Price: <input type="number" name="price" required={true} onChange={handleChange}/>
         </label>
         <label>Date: <input type="date" name="date" onChange={handleChange}/>
