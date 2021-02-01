@@ -1,52 +1,84 @@
 * {
     box-sizing: border-box;
 }
+
 #entry {
+    height: 100vh;
+    width: 100vw;
     border: 0;
     align-content: center;
 }
 
-@media(max-width: 800px) {
- #entry {
+@media (max-width: 1000px) {
+    #entry {
         flex: 100%;
         max-width: 100%;
-     flex-direction: column;
+        flex-direction: column;
+        font-size: 12px;
     }
+
+    #left-side {
+        order: 1;
+        flex: 50%;
+    }
+
+    #right-side {
+        order: 2;
+        flex: 50%;
+    }
+
 }
+
 @media (max-width: 600px) {
     #entry {
         flex: 50%;
         max-width: 50%;
         flex-direction: column;
+        font-size: 12px;
     }
+
+    #left-side {
+        order: 1;
+        flex: 50%;
+    }
+
+    #right-side {
+        order: 2;
+        flex: 50%;
+    }
+
 }
-.flex-column{
+
+.flex-column {
     display: flex;
     flex-direction: column;
 }
 
-.flex-row{
+.flex-row {
     display: flex;
     flex-direction: row;
 }
 
 #left-side {
     order: 1;
-    flex: 70%;
+    flex: 60%;
 }
 
 #right-side {
     order: 2;
-    flex: 30%;
+    flex: 40%;
 }
 
 #wallet-card {
+    height: 100%;
 }
 
 
 #pie-chart {
-    height: 20em;
-    width: 40em;
+    height: 50vh;
+    width: 50vw;
+    display: flex;
+    flex-direction: row;
 }
 
 #react-calendar {
@@ -90,4 +122,10 @@
     width: 8em;
     order: 1;
     /*align-self: flex-end;*/
+}
+.spending{
+    heigh: 30vh;
+}
+#top5spending{
+    list-style: none;
 }
