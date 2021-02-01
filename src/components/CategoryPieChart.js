@@ -14,7 +14,7 @@ import { linearGradientDef } from '@nivo/core'
      }
  ]}
 */
-const MyResponsivePie = ({data}) => (
+const CategoryPieChart = ({data}) => (
 
     <ResponsivePie
         data={data}
@@ -24,7 +24,7 @@ const MyResponsivePie = ({data}) => (
         innerRadius={0.5}
         padAngle={0.7}
         cornerRadius={3}
-        margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
+        margin={{ top: 40, right: 40, bottom: 40, left: 40 }}
         colors={{ scheme: 'brown_blueGreen' }}
         // colors={["BlanchedAlmond", "purple", "orange", "Indigo", "Teal"]}
         borderWidth={3}
@@ -158,11 +158,11 @@ const MyResponsivePie = ({data}) => (
                 anchor: 'left',
                 direction: 'column',
                 justify: false,
-                translateX: 0,
+                translateX: -20,
                 translateY: 56,
-                itemsSpacing: 0,
-                itemWidth: 10,
-                itemHeight: 50,
+                itemsSpacing: 10,
+                itemWidth: 0,
+                itemHeight: 10,
                 itemTextColor: '#999',
                 itemDirection: 'left-to-right',
                 itemOpacity: 1,
@@ -179,4 +179,4 @@ const MyResponsivePie = ({data}) => (
             }
         ]} />
 )
-export default MyResponsivePie
+export default CategoryPieChart
