@@ -1,31 +1,93 @@
-#entry{
+* {
+    box-sizing: border-box;
+}
+#entry {
+    border: 0;
+    align-content: center;
+}
+
+@media(max-width: 800px) {
+ #entry {
+        flex: 100%;
+        max-width: 100%;
+     flex-direction: column;
+    }
+}
+@media (max-width: 600px) {
+    #entry {
+        flex: 50%;
+        max-width: 50%;
+        flex-direction: column;
+    }
+}
+.flex-column{
     display: flex;
     flex-direction: column;
-    border: 0;
 }
-#pie-chart{
-    height: 30em;
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
 }
-#react-calendar{
+
+#left-side {
+    order: 1;
+    flex: 70%;
+}
+
+#right-side {
+    order: 2;
+    flex: 30%;
+}
+
+#wallet-card {
+}
+
+
+#pie-chart {
+    height: 20em;
+    width: 40em;
+}
+
+#react-calendar {
     height: 10em;
 }
-#add-entry{
+
+#add-entry {
     height: 10em;
+    width: 40em;
     text-align: center;
 }
-#add-entry form{
-    display: flex;
-    flex-direction: column;
-    /*display: inline-block;*/
-    margin-left: 25%;
-    margin-right:25%;
+
+#add-entry form {
+    height: 100%;
     width: 50%;
-    height: 10em;
+    margin-left: 25%;
+    margin-right: 25%;
     align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
 }
-#make-it-rain{
-    height: 3vh;
-    width: 10vw;
+
+#add-entry input, select {
+    display: flex;
+    justify-self: self-start;
+    height: 1.5em;
+    width: 12em;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+#add-entry label {
+    display: flex;
+    padding: .5em;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#make-it-rain {
+    height: 1.5em;
+    width: 8em;
+    order: 1;
+    /*align-self: flex-end;*/
 }
