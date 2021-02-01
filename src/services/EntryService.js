@@ -45,9 +45,9 @@ const insertNewEntryToChartData = (r, categoryCounts, setCategoryCounts) => {
 }
 
 const formatDate = (d) => {
-    return d.getUTCFullYear()+'-'+d.getUTCMonth()+1+'-'+d.getDate();
+    return d.getFullYear()+'-'+d.getUTCMonth()+1+'-'+d.getDate();
     // d = new Date(d.getTime());
-    // return d.toISOString().split("T")[0];
+    // return d.split("T")[0];
     // return d.getFullYear()+'-'+("0"+(d.getMonth()+1)).slice(-2)+'-'+("0"+d.getDate()).slice(-2);
     // return d.getFullYear().toString()+"-"+((d.getMonth()+1).toString().length===2?(d.getMonth()+1).toString():"0"+(d.getMonth()+1).toString())+"-"+(d.getDate().toString().length===2?d.getDate().toString():"0"+d.getDate().toString());
 }
