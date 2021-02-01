@@ -4,6 +4,7 @@ import AddNewEntry from "./AddNewEntry";
 import CategoryPieChart from "./CategoryPieChart";
 import EntryCalendar from "./Calendar";
 import "../css/Entry.css"
+import TopSpendingCategories from "./TopSpendingCategories";
 
 const Entry = () => {
     const [categoryCounts, setCategoryCounts] = useState([])
@@ -41,18 +42,25 @@ const Entry = () => {
     } else {
 
         return (
-            <div id="entry">
+            <div id="entry" className="flex-row">
+                <div id="left-side" className="flex-column">
+                    <p id="my-wallet">My wallet</p>
+                    <div id="wallet-card" className="flex-column">
 
-                <div id="add-entry">
-                    <AddNewEntry/>
+                        <div id="pie-chart">
+                            <CategoryPieChart data={entryService.categoryToPieChartData(categoryCounts)}/>
+                        </div>
+                        <div id="top-5-spending">
+                            <TopSpendingCategories/>
+                        </div>
+                    </div>
                 </div>
-                <div id="pie-chart">
-                    <CategoryPieChart data={entryService.categoryToPieChartData(categoryCounts)}/>
+                <div id="right-side" className="flex-column">
+                    <div id="add-entry" className="flex-column">
+                        <AddNewEntry/>
+                    </div>
+                    <button id="make-it-rain" onClick={makeItRain}>Make it rain!</button>
                 </div>
-                {/*<div id="react-calendar">*/}
-                {/*    <EntryCalendar/>*/}
-                {/*</div>*/}
-                <button id="make-it-rain" onClick={makeItRain}>Make it rain!</button>
             </div>
         )
     }
