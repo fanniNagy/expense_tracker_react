@@ -155,7 +155,7 @@ const MyResponsivePie = ({data}) => (
         ]}
         legends={[
             {
-                anchor: 'bottom-left',
+                anchor: 'left',
                 direction: 'column',
                 justify: false,
                 translateX: 0,
