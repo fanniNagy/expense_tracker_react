@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
-import entryService from "../services/EntryService"
+import entryService from "../services/EntryService";
+import AddNewEntry from "./AddNewEntry";
 import CategoryPieChart from "./CategoryPieChart";
 import EntryCalendar from "./Calendar";
 
@@ -42,7 +43,8 @@ const Entry = () => {
         return (
             <div>
                 <button onClick={makeItRain}>Make it rain!</button>
-                <div style={{height: "40em"}}>
+                <AddNewEntry/>
+                <div style={{height: "30em"}}>
                     <CategoryPieChart data={entryService.categoryToPieChartData(categoryCounts)}/>
                 </div>
                 <div style={{height: "30em"}}>
