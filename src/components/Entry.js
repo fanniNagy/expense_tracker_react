@@ -3,6 +3,7 @@ import entryService from "../services/EntryService";
 import AddNewEntry from "./AddNewEntry";
 import CategoryPieChart from "./CategoryPieChart";
 import EntryCalendar from "./Calendar";
+import "../css/Entry.css"
 
 const Entry = () => {
     const [categoryCounts, setCategoryCounts] = useState([])
@@ -22,9 +23,9 @@ const Entry = () => {
         entryService.getNewRandomEntry()
             .then(r => {
                 console.log(r)
-                if(r.status === 200) {
+                if (r.status === 200) {
                     entryService.insertNewEntryToChartData(r.data, categoryCounts, setCategoryCounts)
-                } else{
+                } else {
                     setError({display: true, message: "Something went wrong :("})
                 }
             })
@@ -35,21 +36,23 @@ const Entry = () => {
             <div> No entry found :(</div>
             <button onClick={makeItRain}>Make it rain!</button>
         </>)
-    } else if(error.display){
+    } else if (error.display) {
         return <div>{error.message}</div>
-    }
-    else {
+    } else {
 
         return (
-            <div>
-                <button onClick={makeItRain}>Make it rain!</button>
-                <AddNewEntry/>
-                <div style={{height: "30em"}}>
+            <div id="entry">
+
+                <div id="add-entry">
+                    <AddNewEntry/>
+                </div>
+                <div id="pie-chart">
                     <CategoryPieChart data={entryService.categoryToPieChartData(categoryCounts)}/>
                 </div>
-                <div style={{height: "30em"}}>
-                    <EntryCalendar/>
-                </div>
+                {/*<div id="react-calendar">*/}
+                {/*    <EntryCalendar/>*/}
+                {/*</div>*/}
+                <button id="make-it-rain" onClick={makeItRain}>Make it rain!</button>
             </div>
         )
     }
