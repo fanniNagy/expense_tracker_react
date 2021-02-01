@@ -51,6 +51,29 @@ const formatDate = (d) => {
     // return d.getFullYear()+'-'+("0"+(d.getMonth()+1)).slice(-2)+'-'+("0"+d.getDate()).slice(-2);
     // return d.getFullYear().toString()+"-"+((d.getMonth()+1).toString().length===2?(d.getMonth()+1).toString():"0"+(d.getMonth()+1).toString())+"-"+(d.getDate().toString().length===2?d.getDate().toString():"0"+d.getDate().toString());
 }
+const formatISOStringDate = (date) => {
+    return date.split("T")[0];
+}
+
+const addNewEntry = (entry) => {
+    const url = baseUrl+"add";
+    const request = axios.post(url, entry)
+    let response = request.then(response => response.data);
+    console.log(response)
+}
+
+const CATEGORIES = ["HOUSING", "TRANSPORTATION", "FOOD", "UTILITIES", "HEALTHCARE",
+    "SAVING", "HOUSEHOLD", "PERSONAL", "ENTERTAINMENT", "MISCELLANEOUS",
+    "PETS", "CLOTHES", "SERVICES", "UNCATEGORIZED",
+    "PAYMENT", "ONETIME_INCOME"]
+
+const INITIAL_ENTRY = {
+    price: 0,
+    category: "UNCATEGORIZED",
+    date: formatISOStringDate(new Date().toISOString()),
+    name:""
+}
+
 
 export default {
     getAll,
@@ -58,5 +81,8 @@ export default {
     categoryToPieChartData,
     getNewRandomEntry,
     insertNewEntryToChartData,
-    formatDate
+    formatDate,
+    CATEGORIES,
+    addNewEntry,
+    INITIAL_ENTRY
 }
