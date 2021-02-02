@@ -58,8 +58,8 @@ const formatISOStringDate = (date) => {
 const addNewEntry = (entry) => {
     const url = baseUrl+"add";
     const request = axios.post(url, entry)
-    let response = request.then(response => response.data);
-    console.log(response)
+    let response = request.then(response => response);
+    return response;
 }
 
 const CATEGORIES = ["HOUSING", "TRANSPORTATION", "FOOD", "UTILITIES", "HEALTHCARE",
