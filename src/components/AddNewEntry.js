@@ -24,16 +24,16 @@ const AddNewEntry = ({counts, setCounts}) => {
     };
 
     return <form className="add-entry-form" onSubmit={(event) => handleSubmit(event)}>
-        <label>Price: <input type="number" name="price" required={true} onChange={handleChange}/>
+        <label>Price: <input type="number" name="price" required={true} onChange={handleChange} value={entry.price}/>
         </label>
-        <label>Date: <input type="date" name="date" onChange={handleChange}/>
+        <label>Date: <input type="date" name="date" onChange={handleChange} value={entry.date}/>
         </label>
         <label>Category:
         <select id="categories" name="category" onChange={handleChange} defaultValue={"UNCATEGORIZED"}>
             {entryService.CATEGORIES.map(category => <option key={category} value={category}>{category}</option>)}
         </select>
         </label>
-        <label>Name: <input type="text" name="name" onChange={handleChange}/>
+        <label>Name: <input type="text" name="name" onChange={handleChange} value={entry.name}/>
         </label>
         <button type="submit" value="Submit">Submit</button>
     </form>
