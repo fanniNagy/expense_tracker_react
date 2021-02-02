@@ -22,7 +22,11 @@ const TopSpendingCategories = () => {
                 {topSpending.length >= 3 ?
                     topSpending.map(categoryCount =>
                         <li key={categoryCount.category}>
-                            {categoryCount.category + " : " + categoryCount.price}</li>)
+                            <ul>
+                                <li>{categoryCount.category}</li>
+                                <li>{Math.abs(categoryCount.price)}</li>
+                            </ul>
+                        </li>)
                     : ""}
             </ol>
         </div>
