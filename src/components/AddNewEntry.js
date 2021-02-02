@@ -2,15 +2,17 @@ import React, {useState} from "react";
 import entryService from "../services/EntryService"
 import "../css/Entry.css";
 
-const AddNewEntry = () => {
+const AddNewEntry = ({counts, setCounts}) => {
 
     const [entry, setEntry] = useState(entryService.INITIAL_ENTRY)
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        entryService.addNewEntry(entry);
-        console.log("submitting: " + JSON.stringify(entry));
-        setEntry(entryService.INITIAL_ENTRY);
+        entryService.addNewEntry(entry).then(value => {
+            if (value.status === 200) {
+                entryService.insertNewEntryToChartData(value.data, counts, setCounts)
+            }
+        }).then(() => setEntry(entryService.INITIAL_ENTRY));
     }
 
     const handleChange = e => {

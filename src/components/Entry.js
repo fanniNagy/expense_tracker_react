@@ -2,7 +2,6 @@ import React, {useState, useEffect} from "react";
 import entryService from "../services/EntryService";
 import AddNewEntry from "./AddNewEntry";
 import CategoryPieChart from "./CategoryPieChart";
-import EntryCalendar from "./Calendar";
 import "../css/Entry.css"
 import TopSpendingCategories from "./TopSpendingCategories";
 
@@ -57,7 +56,7 @@ const Entry = () => {
                 </div>
                 <div id="right-side" className="flex-column">
                     <div id="add-entry" className="flex-column">
-                        <AddNewEntry/>
+                        <AddNewEntry counts={categoryCounts} setCounts={setCategoryCounts}/>
                     </div>
                     <button id="make-it-rain" onClick={makeItRain}>Make it rain!</button>
                 </div>
