@@ -62,21 +62,30 @@
 #left-side {
     order: 1;
     flex: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #right-side {
     order: 2;
     flex: 40%;
+
+    display: flex;
+    justify-content: center;
 }
 
 #wallet-card {
-    height: 100%;
+    position: relative;
+    height: auto;
+    display: flex;
 }
 
-
 #pie-chart {
-    height: 50vh;
-    width: 50vw;
+    overflow: hidden;
+    height: 40vh;
+    width: 50vh;
+    align-self: center;
     display: flex;
     flex-direction: row;
 }
@@ -86,8 +95,8 @@
 }
 
 #add-entry {
-    height: 10em;
-    width: 40em;
+    width: auto;
+    height: auto;
     text-align: center;
 }
 
@@ -121,11 +130,12 @@
     height: 1.5em;
     width: 8em;
     order: 1;
-    /*align-self: flex-end;*/
+    align-self: flex-end;
 }
 .spending{
     heigh: 30vh;
 }
-#top5spending{
+
+ol li{
     list-style: none;
 }
