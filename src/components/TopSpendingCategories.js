@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import entryService from "../services/EntryService";
 import "../css/Entry.css";
 
-const TopSpendingCategories = () => {
+const TopSpendingCategories = ({counts}) => {
     const [topSpending, setTopSpending] = useState([])
 
     useEffect(() => {
@@ -12,7 +12,7 @@ const TopSpendingCategories = () => {
                     setTopSpending(r.data)
                 }
             })
-    }, [])
+    }, [counts])
 
 
     return (

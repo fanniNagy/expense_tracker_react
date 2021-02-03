@@ -50,7 +50,7 @@ const Entry = () => {
                             <CategoryPieChart data={entryService.categoryToPieChartData(categoryCounts)}/>
                         </div>
                         <div id="top-5-spending">
-                            <TopSpendingCategories/>
+                            <TopSpendingCategories counts={categoryCounts}/>
                         </div>
                     </div>
                 </div>
