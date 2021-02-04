@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
 * {
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 #entry {
@@ -70,21 +74,33 @@
 #right-side {
     order: 2;
     flex: 40%;
-
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+#my-wallet{
+    align-self: self-start;
+    font-family: 'Lobster', cursive;
+    font-size: 2rem;
+    margin: 1rem;
 }
 
 #wallet-card {
     position: relative;
-    height: auto;
+    height: 70vh;
+    width: auto;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3em;
 }
 
 #pie-chart {
     overflow: hidden;
-    height: 40vh;
-    width: 50vh;
+    height: 50em;
+    width: 50em;
     align-self: center;
     display: flex;
     flex-direction: row;
@@ -95,46 +111,69 @@
 }
 
 #add-entry {
-    width: auto;
+    width: 30vw;
     height: auto;
     text-align: center;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3em;
+    align-items: center;
 }
 
 #add-entry form {
     height: 100%;
-    width: 50%;
-    margin-left: 25%;
-    margin-right: 25%;
+    /*width: 50%;*/
+    margin: 15%;
     align-items: center;
+    /*display: flex;*/
+    /*flex-direction: column;*/
 }
 
-#add-entry input, select {
-    display: flex;
-    justify-self: self-start;
+#add-entry input, #add-entry select {
+    /*display: flex;*/
     height: 1.5em;
     width: 12em;
     margin: 0;
     padding: 0;
     border: none;
+    flex: 1 1 auto;
+    display: inline-block;
 }
 
 #add-entry label {
     display: flex;
+    flex-direction: row;
     padding: .5em;
-    width: 100%;
+    /*width: 100%;*/
     align-items: center;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
+    /*width: 10em;*/
+    /*padding-right: 0.5em;*/
+}
+input{
+   float: right;
 }
 
 #make-it-rain {
-    height: 1.5em;
-    width: 8em;
+    height: 2em;
+    width: 2em;
     order: 1;
-    align-self: flex-end;
+    align-self: center;
 }
 .spending{
-    heigh: 30vh;
+    /*height: 30vh;*/
+    width: auto;
+    text-align: center;
+    float: left;
+
+    display: flex;
+    flex-direction: column;
 }
+#top5spending{
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
 
 ol li{
     list-style: none;
