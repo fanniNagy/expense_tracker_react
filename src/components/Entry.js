@@ -4,6 +4,8 @@ import AddNewEntry from "./AddNewEntry";
 import CategoryPieChart from "./CategoryPieChart";
 import "../css/Entry.css"
 import TopSpendingCategories from "./TopSpendingCategories";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagic } from '@fortawesome/free-solid-svg-icons';
 
 const Entry = () => {
     const [categoryCounts, setCategoryCounts] = useState([])
@@ -58,7 +60,7 @@ const Entry = () => {
                     <div id="add-entry" className="flex-column">
                         <AddNewEntry counts={categoryCounts} setCounts={setCategoryCounts}/>
                     </div>
-                    <button id="make-it-rain" onClick={makeItRain}>Make it rain!</button>
+                    <button id="make-it-rain" onClick={makeItRain}><FontAwesomeIcon icon={faMagic} /></button>
                 </div>
             </div>
         )
