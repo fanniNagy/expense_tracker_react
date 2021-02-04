@@ -30,8 +30,10 @@ const CategoryPieChart = ({data}) => (
         borderWidth={3}
         borderColor={{ from: 'color', modifiers: [ [ 'opacity', '0.3' ] ] }}
         // borderColor={{ from: 'color', modifiers: [ [ 'darker', '0.5' ] ] }}
-        radialLabelsLinkColor="#fff"
+        enableRadialLabels={true}
+        radialLabelsLinkColor={{ theme: 'labels.text.fill' }}
         sliceLabelsTextColor="#fff"
+        sliceLabel={function(e){return e.id+": ("+e.value+")"}}
         // sliceLabelsTextColor={{ theme: 'background' }}
         defs={[
             {
@@ -154,29 +156,30 @@ const CategoryPieChart = ({data}) => (
             }
         ]}
         legends={[
-            {
-                anchor: 'left',
-                direction: 'column',
-                justify: false,
-                translateX: -20,
-                translateY: 56,
-                itemsSpacing: 10,
-                itemWidth: 0,
-                itemHeight: 10,
-                itemTextColor: '#999',
-                itemDirection: 'left-to-right',
-                itemOpacity: 1,
-                symbolSize: 18,
-                symbolShape: 'circle',
-                effects: [
-                    {
-                        on: 'hover',
-                        style: {
-                            itemTextColor: '#000'
-                        }
-                    }
-                ]
-            }
-        ]} />
+            // {
+            //     anchor: 'left',
+            //     direction: 'column',
+            //     justify: false,
+            //     translateX: -20,
+            //     translateY: 56,
+            //     itemsSpacing: 10,
+            //     itemWidth: 0,
+            //     itemHeight: 10,
+            //     itemTextColor: '#999',
+            //     itemDirection: 'left-to-right',
+            //     itemOpacity: 1,
+            //     symbolSize: 18,
+            //     symbolShape: 'circle',
+            //     effects: [
+            //         {
+            //             on: 'hover',
+            //             style: {
+            //                 itemTextColor: '#000'
+            //             }
+            //         }
+            //     ]
+            // }
+        ]}
+    />
 )
 export default CategoryPieChart
