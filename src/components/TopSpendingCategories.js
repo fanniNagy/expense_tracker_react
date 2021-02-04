@@ -17,7 +17,7 @@ const TopSpendingCategories = ({counts}) => {
 
     return (
         <div className="spending">
-            <span>Categories with biggest expense: </span>
+            <span id="top-spending-title">Categories with biggest expense: </span>
             <ol id="top5spending" className="flex-row">
                 {topSpending.length >= 3 ?
                     topSpending.map(categoryCount =>
