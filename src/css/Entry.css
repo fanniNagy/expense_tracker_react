@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+#entry {
+    height: 100vh;
+    width: 100vw;
+    border: 0;
+    align-content: center;
+}
+
+@media (max-width: 1000px) {
+    #entry {
+        flex: 100%;
+        max-width: 100%;
+        flex-direction: column;
+        font-size: 12px;
+    }
+
+    #left-side {
+        order: 1;
+        flex: 50%;
+    }
+
+    #right-side {
+        order: 2;
+        flex: 50%;
+    }
+
+}
+
+@media (max-width: 600px) {
+    #entry {
+        flex: 50%;
+        max-width: 50%;
+        flex-direction: column;
+        font-size: 12px;
+    }
+
+    #left-side {
+        order: 1;
+        flex: 50%;
+    }
+
+    #right-side {
+        order: 2;
+        flex: 50%;
+    }
+
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+#left-side {
+    order: 1;
+    flex: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#right-side {
+    order: 2;
+    flex: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#my-wallet{
+    align-self: self-start;
+    font-family: 'Lobster', cursive;
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+#wallet-card {
+    position: relative;
+    height: 70vh;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3em;
+}
+
+#pie-chart {
+    overflow: hidden;
+    height: 50em;
+    width: 50em;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+}
+
+#react-calendar {
+    height: 10em;
+}
+
+#add-entry {
+    width: 30vw;
+    height: auto;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3em;
+    align-items: center;
+}
+
+#add-entry form {
+    height: 100%;
+    /*width: 50%;*/
+    margin: 15%;
+    align-items: center;
+    /*display: flex;*/
+    /*flex-direction: column;*/
+}
+
+#add-entry input, #add-entry select {
+    /*display: flex;*/
+    height: 1.5em;
+    width: 12em;
+    margin: 0;
+    padding: 0;
+    border: none;
+    flex: 1 1 auto;
+    display: inline-block;
+}
+
+#add-entry label {
+    display: flex;
+    flex-direction: row;
+    padding: .5em;
+    /*width: 100%;*/
+    align-items: center;
+    /*justify-content: space-between;*/
+    /*width: 10em;*/
+    /*padding-right: 0.5em;*/
+}
+input{
+   float: right;
+}
+
+#make-it-rain {
+    height: 2em;
+    width: 2em;
+    order: 1;
+    align-self: center;
+}
+.spending{
+    /*height: 30vh;*/
+    width: auto;
+    text-align: center;
+    float: left;
+
+    display: flex;
+    flex-direction: column;
+}
+#top5spending{
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+
+ol li{
+    list-style: none;
+}
