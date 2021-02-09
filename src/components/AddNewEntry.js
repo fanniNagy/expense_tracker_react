@@ -25,6 +25,14 @@ const AddNewEntry = ({counts, setCounts}) => {
         }));
     };
 
+    const handleCategoryAutoComplete = (event, value) => {
+        setEntry(prevState => ({
+            ...prevState,
+            ["category"]: value
+        }));
+    }
+
+
     return <form className="add-entry-form" onSubmit={(event) => handleSubmit(event)}>
         <TextField  id="price-input" className={"form-element form-input"} name="price" type="number" label="Price" variant="filled" required={true} onChange={handleChange} value={entry.price} />
 
