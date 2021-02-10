@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
-* {
+body {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    background-color: #444449;
 }
 
 #entry {
@@ -80,10 +81,12 @@
 }
 
 #my-wallet{
-    align-self: self-start;
+    align-self: flex-start;
     font-family: 'Lobster', cursive;
     font-size: 2rem;
     margin: 1rem;
+    color: rgba(255, 255, 255, .75);
+    text-shadow: 0.05em 0.05em 0.05em rgba(255, 255, 255, .5);
 }
 
 #wallet-card {
@@ -93,8 +96,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 3em;
+    overflow: hidden;
+}
+
+#wallet-card:before{
+   opacity: 10%;
+}
+
+.shadowed-box{
+    box-shadow: 0 0 1rem 0 rgba(255, 255, 255, .5);
+    background-color: rgba(255, 255, 255, .5);
+    backdrop-filter: blur(5px);
+    border-radius: 2em;
 }
 
 #pie-chart {
@@ -111,44 +124,31 @@
 }
 
 #add-entry {
-    width: 30vw;
-    height: auto;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 3em;
+    width: 35vw;
+    height: 50vh;
     align-items: center;
+    float: left;
 }
 
 #add-entry form {
     height: 100%;
-    /*width: 50%;*/
-    margin: 15%;
+    width: 75%;
     align-items: center;
-    /*display: flex;*/
-    /*flex-direction: column;*/
-}
-
-#add-entry input, #add-entry select {
-    /*display: flex;*/
-    height: 1.5em;
-    width: 12em;
-    margin: 0;
-    padding: 0;
-    border: none;
-    flex: 1 1 auto;
-    display: inline-block;
-}
-
-#add-entry label {
     display: flex;
-    flex-direction: row;
-    padding: .5em;
-    /*width: 100%;*/
-    align-items: center;
-    /*justify-content: space-between;*/
-    /*width: 10em;*/
-    /*padding-right: 0.5em;*/
+    flex-direction: column;
+    justify-content: space-between !important;
 }
+
+.form-input{
+    width: 25vw;
+    height: 1vh;
+}
+
+.form-element{
+    margin: 0.5rem !important;
+    padding: 0.5rem !important;
+}
+
 input{
    float: right;
 }
@@ -160,7 +160,6 @@ input{
     align-self: center;
 }
 .spending{
-    /*height: 30vh;*/
     width: auto;
     text-align: center;
     float: left;
@@ -172,6 +171,7 @@ input{
     margin: 0;
     padding: 0;
     float: left;
+    width: 100%;
 }
 
 

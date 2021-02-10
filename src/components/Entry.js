@@ -46,8 +46,7 @@ const Entry = () => {
             <div id="entry" className="flex-row">
                 <div id="left-side" className="flex-column">
                     <p id="my-wallet">My wallet</p>
-                    <div id="wallet-card" className="flex-column">
-
+                    <div id="wallet-card" className="flex-column shadowed-box">
                         <div id="pie-chart">
                             <CategoryPieChart data={entryService.categoryToPieChartData(categoryCounts)}/>
                         </div>
@@ -57,7 +56,7 @@ const Entry = () => {
                     </div>
                 </div>
                 <div id="right-side" className="flex-column">
-                    <div id="add-entry" className="flex-column">
+                    <div id="add-entry" className="flex-column shadowed-box">
                         <AddNewEntry counts={categoryCounts} setCounts={setCategoryCounts}/>
                     </div>
                     <button id="make-it-rain" onClick={makeItRain}><FontAwesomeIcon icon={faMagic} /></button>
