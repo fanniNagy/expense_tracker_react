@@ -1,10 +1,11 @@
 import React from "react";
 import axios from 'axios';
 
-const baseUrl = 'http://localhost:8080/';
+const baseUrl = 'http://localhost:8080';
+axios.defaults.baseURL = baseUrl;
 
 const login = (username, password) => {
-    let request = axios.post(`${baseUrl}login`, {
+    let request = axios.post(`/login`, {
         "username": username,
         "password": password
     },{withCredentials: true});

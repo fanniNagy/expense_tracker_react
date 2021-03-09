@@ -1,14 +1,16 @@
 import axios from 'axios'
 
-const baseUrl = 'http://localhost:8080/'
+const baseUrl = 'http://localhost:8080';
+axios.defaults.baseURL = baseUrl;
+
 
 const getAll = () => {
-    const request = axios.get(baseUrl)
+    const request = axios.get(`/`, {withCredentials: true})
     return request.then(response => response.data)
 }
 
 const getCategoryCount = () => {
-    const request = axios.get(baseUrl + "category/expense/count")
+    const request = axios.get("/category/expense/count", {withCredentials: true})
     return request.then(response => response.data)
 }
 
@@ -25,7 +27,7 @@ const categoryToPieChartData = (categories) => {
     return data;
 }
 const getNewRandomEntry = () => {
-    const request = axios.get(baseUrl + "random")
+    const request = axios.get("/random", {withCredentials: true})
     return request.then(response => response)
 }
 
@@ -46,18 +48,13 @@ const insertNewEntryToChartData = (r, categoryCounts, setCategoryCounts) => {
 
 const formatDate = (d) => {
     return d.getFullYear()+'-'+d.getUTCMonth()+1+'-'+d.getDate();
-    // d = new Date(d.getTime());
-    // return d.split("T")[0];
-    // return d.getFullYear()+'-'+("0"+(d.getMonth()+1)).slice(-2)+'-'+("0"+d.getDate()).slice(-2);
-    // return d.getFullYear().toString()+"-"+((d.getMonth()+1).toString().length===2?(d.getMonth()+1).toString():"0"+(d.getMonth()+1).toString())+"-"+(d.getDate().toString().length===2?d.getDate().toString():"0"+d.getDate().toString());
 }
 const formatISOStringDate = (date) => {
     return date.split("T")[0];
 }
 
 const addNewEntry = (entry) => {
-    const url = baseUrl+"add";
-    const request = axios.post(url, entry)
+    const request = axios.post("/add", entry, {withCredentials:true})
     let response = request.then(response => response);
     return response;
 }
@@ -75,7 +72,7 @@ const INITIAL_ENTRY = {
 }
 
 const getTopSpending = () => {
-    const request = axios.get(baseUrl + "category/top5spending")
+    const request = axios.get("/category/top5spending", {withCredentials: true})
     return request.then(response => response)
 }
 
