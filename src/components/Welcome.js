@@ -6,13 +6,22 @@ import Entry from "./Entry";
 
 const Welcome = () => {
 
+    const registrationText = "Sign in";
+    const loginText = "Log in"
+
     const {authenticated} = useContext(users);
     return (
         <div className={"welcome-container"}>
             {authenticated ? (<div className={"entry-container"}><Entry/></div>)
-                : (<div className={"login-registration-container"}>
-                    <div className={"registration-container"}> SIGN IN <Registration/></div>
-                    <div className={"login-container"}> LOG IN <Login/></div>
+                : (<div className={"login-registration-container shadowed-box"}>
+                    <div className={"registration-container"}>
+                        <p>{registrationText.toUpperCase()}</p>
+                        <Registration/>
+                    </div>
+                    <div className={"login-container"}>
+                        <p>{loginText.toUpperCase()}</p>
+                        <Login/>
+                    </div>
                 </div>)
             }
         </div>
