@@ -4,6 +4,7 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import {users} from "../context/UserContext";
 import axios from "axios";
+import "../css/Auth.css"
 
 const Login = () => {
     // const baseUrl = 'http://localhost:8080';
@@ -48,13 +49,13 @@ const Login = () => {
         console.log(formUser);
     };
 
-    return <form className={"login-form"} onSubmit={event => handleSubmit(event)}>
+    return <form className={"login-form user-form"} onSubmit={event => handleSubmit(event)}>
         <TextField id="username-input" className={"login-form-element login-form-input"} name="userName" type="text"
                    label="Username" variant="filled" required={true} onChange={handleChange} value={formUser.userName}/>
         <TextField id="password-input" className={"login-form-element login-form-input"} type="password" name="password"
                    onChange={handleChange} value={formUser.password} label="Outlined" variant="outlined"
                    InputLabelProps={{shrink: true}}/>
-        <Button className={"form-element"} type="submit" value="Submit" variant="outlined"
+        <Button className={"login-form-element user-form-element"} type="submit" value="Submit" variant="outlined"
                 color="default"> Submit </Button>
     </form>
 }

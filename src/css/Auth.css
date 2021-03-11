@@ -1,0 +1,12 @@
+.user-form{
+    height: 75%;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+}
+
+.login-form-input, .registration-form-input{
+    margin: 1em !important;
+}
