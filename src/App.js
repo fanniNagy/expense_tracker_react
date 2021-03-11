@@ -3,11 +3,11 @@ import Entry from "./components/Entry";
 import Login from "./components/Login"
 import {UserProvider} from "./context/UserContext";
 import Registration from "./components/Registration";
+import Welcome from "./components/Welcome";
 import {
     BrowserRouter as Router,
     Switch,
-    Route,
-    Link
+    Route
 } from "react-router-dom";
 
 function App() {
@@ -20,8 +20,7 @@ function App() {
                         <Route path="/login" component={Login} />
                         <Route path="/entry" component={Entry} />
                         <Route path="/register" component={Registration} />
-                    {/*    <Link to="/">Home</Link>*/}
-                    {/*    <Route path="/entry"><Entry/></Route>*/}
+                        <Route path="/" component={Welcome} />
                     </Switch>
                 </UserProvider>
             </div>
