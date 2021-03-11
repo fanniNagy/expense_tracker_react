@@ -1,4 +1,3 @@
-import React from "react";
 import axios from 'axios';
 
 const baseUrl = 'http://localhost:8080';
@@ -9,8 +8,7 @@ const login = (username, password) => {
         "username": username,
         "password": password
     },{withCredentials: true});
-    let response = request.then(response => response);
-    return response;
+    return request.then(response => response);
 }
 
 const register = (username, password) => {
@@ -18,10 +16,10 @@ const register = (username, password) => {
         "userName": username,
         "password": password
     }, {withCredentials: true});
-    let response = request.then(response => response);
-    return response;
+    return request.then(response => response);
 }
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
     login,
     register

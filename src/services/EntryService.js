@@ -47,16 +47,15 @@ const insertNewEntryToChartData = (r, categoryCounts, setCategoryCounts) => {
 }
 
 const formatDate = (d) => {
-    return d.getFullYear()+'-'+d.getUTCMonth()+1+'-'+d.getDate();
+    return d.getFullYear() + '-' + d.getUTCMonth() + 1 + '-' + d.getDate();
 }
 const formatISOStringDate = (date) => {
     return date.split("T")[0];
 }
 
 const addNewEntry = (entry) => {
-    const request = axios.post("/add", entry, {withCredentials:true})
-    let response = request.then(response => response);
-    return response;
+    const request = axios.post("/add", entry, {withCredentials: true})
+    return request.then(response => response);
 }
 
 const CATEGORIES = ["HOUSING", "TRANSPORTATION", "FOOD", "UTILITIES", "HEALTHCARE",
@@ -68,7 +67,7 @@ const INITIAL_ENTRY = {
     price: 0,
     category: "UNCATEGORIZED",
     date: formatISOStringDate(new Date().toISOString()),
-    name:""
+    name: ""
 }
 
 const getTopSpending = () => {
@@ -77,6 +76,7 @@ const getTopSpending = () => {
 }
 
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
     getAll,
     getCategoryCount,
