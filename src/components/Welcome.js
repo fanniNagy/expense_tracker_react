@@ -3,6 +3,7 @@ import {users} from "../context/UserContext";
 import Registration from "./Registration";
 import Login from "./Login";
 import Entry from "./Entry";
+import "../css/Welcome.css";
 
 const Welcome = () => {
 
