@@ -2,6 +2,7 @@ import './App.css';
 import Entry from "./components/Entry";
 import Login from "./components/Login"
 import {UserProvider} from "./context/UserContext";
+import Registration from "./components/Registration";
 import {
     BrowserRouter as Router,
     Switch,
@@ -15,16 +16,13 @@ function App() {
         <Router>
             <div className="App">
                 <UserProvider>
-                    <Login/>
-                    {/*
-                    <li>
-                        <Link to="/">Home</Link>
-                    </li>
                     <Switch>
-                        <Route path="/">
-                            <Entry/>
-                        </Route>
-                    </Switch>*/}
+                        <Route path="/login" component={Login} />
+                        <Route path="/entry" component={Entry} />
+                        <Route path="/register" component={Registration} />
+                    {/*    <Link to="/">Home</Link>*/}
+                    {/*    <Route path="/entry"><Entry/></Route>*/}
+                    </Switch>
                 </UserProvider>
             </div>
         </Router>
