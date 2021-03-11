@@ -6,7 +6,7 @@ import {users} from "../context/UserContext";
 import axios from "axios";
 
 const Login = () => {
-    const baseUrl = 'http://localhost:8080';
+    // const baseUrl = 'http://localhost:8080';
     // axios.defaults.baseURL = baseUrl;
 
     const {setUser, setAuthenticated} = useContext(users);
@@ -19,7 +19,7 @@ const Login = () => {
     function fillContext(username) {
         axios
             .get(`/user/${username}`, {withCredentials: true})
-            .then(responseJson => {
+            .then(() => {
                 setUser({
                     username: username
                 })
