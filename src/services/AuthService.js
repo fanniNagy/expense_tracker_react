@@ -13,7 +13,17 @@ const login = (username, password) => {
     return response;
 }
 
+const register = (username, password) => {
+    let request = axios.post(`/user/register`, {
+        "userName": username,
+        "password": password
+    }, {withCredentials: true});
+    let response = request.then(response => response);
+    return response;
+}
+
 export default {
-    login
+    login,
+    register
 }
 
