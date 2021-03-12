@@ -25,14 +25,24 @@ const CategoryPieChart = ({data}) => (
         padAngle={0.7}
         cornerRadius={3}
         margin={{ top: 40, right: 40, bottom: 40, left: 40 }}
-        colors={{ scheme: 'brown_blueGreen' }}
-        // colors={["BlanchedAlmond", "purple", "orange", "Indigo", "Teal"]}
+        // colors={{ scheme: 'pastel1' }}
+        // `#fff0f5`,
+        // `#faf0e6`,
+        colors={[`#b3ccff`,
+            `#c0d9b7`,
+            `#fadeba`,
+            `#ffe4e1`,
+            `#d8bfd8`,
+            `#eee8aa`,
+            `#adebeb`]}
         borderWidth={3}
-        borderColor={{ from: 'color', modifiers: [ [ 'opacity', '0.3' ] ] }}
+        // borderColor={{ from: 'color', modifiers: [ [ 'opacity', '0.3' ] ] }}
         // borderColor={{ from: 'color', modifiers: [ [ 'darker', '0.5' ] ] }}
+        borderWidth={1}
+        borderColor={{ from: 'color', modifiers: [ [ 'darker', '2.1' ] ] }}
         enableRadialLabels={true}
         radialLabelsLinkColor={{ theme: 'labels.text.fill' }}
-        sliceLabelsTextColor="#fff"
+        sliceLabelsTextColor="rgba(40, 44, 52, 1)"
         sliceLabel={function(e){return e.id+": ("+e.value+")"}}
         // sliceLabelsTextColor={{ theme: 'background' }}
         defs={[
@@ -49,7 +59,8 @@ const CategoryPieChart = ({data}) => (
                 id: 'lines',
                 type: 'patternLines',
                 background: 'inherit',
-                color: 'rgba(255, 255, 255, 0.3)',
+                // color: 'rgba(255, 255, 255, 0.3)',
+                color: 'rgba(40, 44, 52, 1)',
                 rotation: -45,
                 lineWidth: 6,
                 spacing: 10
