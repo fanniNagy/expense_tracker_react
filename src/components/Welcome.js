@@ -7,7 +7,7 @@ import "../css/Welcome.css";
 
 const Welcome = () => {
 
-    const registrationText = "Sign in";
+    const registrationText = "Sign up";
     const loginText = "Log in"
 
     const {authenticated} = useContext(users);
