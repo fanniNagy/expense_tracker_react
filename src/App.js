@@ -4,6 +4,7 @@ import Login from "./components/Login"
 import {UserProvider} from "./context/UserContext";
 import Registration from "./components/Registration";
 import Welcome from "./components/Welcome";
+import NavBar from "./components/NavBar";
 import {
     BrowserRouter as Router,
     Switch,
@@ -16,6 +17,7 @@ function App() {
         <Router>
             <div className="App">
                 <UserProvider>
+                    <NavBar/>
                     <Switch>
                         <Route path="/login" component={Login} />
                         <Route path="/entry" component={Entry} />
